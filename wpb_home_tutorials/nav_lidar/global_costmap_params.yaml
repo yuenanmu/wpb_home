@@ -14,6 +14,7 @@ recovery_behaviors:
   - name: 'aggressive_reset'
     type: 'clear_costmap_recovery/ClearCostmapRecovery'
 
+# 构建一个以机器人为中心的正方体，这里设置边长
 conservative_reset:
   reset_distance: 2.0
   layer_names: ["obstacle_layer"]
@@ -21,3 +22,6 @@ conservative_reset:
 aggressive_reset:
   reset_distance: 0.0
   layer_names: ["obstacle_layer"]
+
+  #重置行为的layer_names默认参数是obstacle（这里如果不定义layer_name,默认就是obstacal了）
+  #costmap中的默认参数是obstacle_layer，所以这里直接使用obstacle_layer
